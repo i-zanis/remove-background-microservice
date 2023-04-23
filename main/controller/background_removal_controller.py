@@ -9,6 +9,7 @@ router = APIRouter()
 @router.post("/remove-background", response_class=FileResponse, responses={
     200: {"description": "Background removed successfully"},
     500: {"description": "Error in removing background"}
+
 })
 async def remove_background_route(file: UploadFile = File(...)):
     result = await remove_background(file)
